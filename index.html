@@ -1,0 +1,36 @@
+<html>
+<head>
+<title>gast</title>
+<style>
+</style>
+</head>
+<body>
+<script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+<script src="http://dglittle.github.io/gl519/index.js"></script>
+<script src="utils.js"></script>
+<script>
+
+function rpc(code) {
+    $.ajax({
+        url : 'https://script.google.com/macros/s/AKfycbwYFlQcSK4_FPg8u3sMfId6ANGASFtlvKpgW4HaATwqwHmaDU19/exec',
+        type : 'post',
+        data : {
+        	code : '5-70'
+        },
+        success : function (o) {
+        	console.log('got here!', typeof(o), o)
+        },
+        error : function (s) {
+        	alert('Oops.. something bad happened. Try reloading the page!')
+        }
+    })
+}
+
+$(function () {
+    $('body').append($('<div/>').text('hi?'))
+    rpc()
+})
+
+</script>
+</body>
+</html>
